@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}Expenses{% endblock %}
+
+{% block content %}
+<h1>Expenses Form</h1>
+<p>Thank you for planning to list your expenses.</p>
+<p>Please fill out the form below:</p>
+<form action="{{ url_for('expense') }}" method="post">
+  {{ form.hidden_tag() }}
+
+  <div>
+    {{ form.company.label }}
+    {{ form.company }}
+  </div>
+    <br>
+
+  <div>
+      {{ form.employee_first.label() }}
+      {{ form.employee_first }}
+      {{ form.employee_last.label() }}
+      {{ form.employee_last }}
+  </div>
+    <br>
+  <div>
+     {{ form.job_title.label() }}
+     {{ form.job_title }}
+  </div>
+    <br>
+
+  <div>
+      {{ form.department.label() }}
+      {{ form.department }}
+  </div>
+    <br>
+<div>
+    {{ form.phone_number.label() }}
+    {{ form.phone_number }}
+</div>
+
+    <br>
+    <div>
+        {{ form.email.label() }}
+        {{ form.email }}
+    </div>
+  <br>
+
+  <div>
+     {{ form.submit() }}
+  </div>
+</form>
+
+<div>
+    <p>To go back how without filling out the form just click <a href="{{ url_for('index') }}"><b>Here</b></a>.</p>
+</div>
+{% endblock %}
